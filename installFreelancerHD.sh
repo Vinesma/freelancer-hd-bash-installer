@@ -101,7 +101,51 @@ _flhd_not_implemented() {
 # This mod gives you the ability to change that ID code in Single Player!
 # Just select any option you like and the NPCs will call you by that.
 _flhd_call_sign() {
-    _flhd_not_implemented "call_sign"
+    local file_path
+    local call_sign_option
+    local call_sign
+    file_path="$_APP/EXE/freelancer.ini"
+    call_sign_option=0
+
+    case $call_sign_option in
+        # Navy Beta 2-5
+        1) call_sign="li_n 2 2-5"  ;;
+        # Bretonia Police Iota 3-4
+        2) call_sign="br_p 8 3-4" ;;
+        # Military Epsilon 11-6
+        3) call_sign="rh_n 5 11-6" ;;
+        # Naval Forces Matsu 4-9
+        4) call_sign="ku_n 22 4-9" ;;
+        # IMG Red 18-6
+        5) call_sign="gd_im 14 18-6" ;;
+        # Kishiro Yanagi 7-3
+        6) call_sign="co_kt 29 7-3" ;;
+        # Outcasts Lambda 9-12
+        7) call_sign="fc_ou 10 9-12" ;;
+        # Dragons Green 16-13
+        8) call_sign="fc_bd 17 16-13" ;;
+        # Spa and Cruise Omega 8-0
+        9) call_sign="co_os 13 8-0" ;;
+        # Daumann Zeta 11-17
+        10) call_sign="co_khc 6 11-17" ;;
+        # Bowex Gamma 5-7
+        11) call_sign="co_be 3 5-7" ;;
+        # Order Omicron 0-0
+        12) call_sign="fc_or 11 0-0" ;;
+        # LSF Delta 6-9
+        13) call_sign="li_lsf 4 6-9" ;;
+        # Hacker Kappa 4-20
+        14) call_sign="fc_lh 9 4-20" ;;
+    esac
+
+    if [ -n "$call_sign" ]; then
+        _flhd_replace_string \
+            "DLL = callsign.dll, player 1 1-1" \
+            "DLL = callsign.dll, $call_sign" \
+            "$file_path"
+    else
+        printf "%s\n" "call_sign option not picked, using default player call sign."
+    fi
 }
 
 # The default Freelancer startup movie only has a resolution of 720x480.
