@@ -2,7 +2,7 @@
 
 A script to install the [Freelancer HD Mod](https://www.moddb.com/mods/freelancer-hd-edition) using bash.
 
-Not affiliated with the main project. I just ran into a ton of problems getting the official installer to work on Linux, so I put together a quick script that does the job for me.
+This is not affiliated with the main project. I just ran into a ton of problems getting the official installer to work on Linux, so I put together a quick script that does the job for me.
 
 The first argument to the script is always a valid path to a vanilla (non-modded) install of Freelancer.
 
@@ -15,6 +15,14 @@ You may need to edit the global variables in the script to reflect your system. 
 ```
 ./installFreelancerHD.sh [/path/to/Freelancer] [/path/to/mod/zipfile]
 ```
+
+## Untested options
+
+* Call sign
+* dxwrapper
+* ReShade
+
+Anything not on this list has been tested and confirmed working by me.
 
 ## Dependencies
 
