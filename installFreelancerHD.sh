@@ -72,7 +72,7 @@ _flhd_unzip() {
 # Generate an executable script for the user to quickly play FreelancerHD
 _flhd_create_exe() {
     local script_dir
-    script_dir="$FREELANCER_HD_DIR/playFreelancerHD.sh"
+    script_dir="$FREELANCER_HD_DIR/FreelancerHD.sh"
 
     # shellcheck disable=SC2016
     {
@@ -88,6 +88,8 @@ _flhd_create_exe() {
         printf "%s\n"   '   run &> /dev/null'
         printf "%s\n"   'fi'
     } > "$script_dir"
+
+    chmod ug+x "$script_dir"
 }
 
 # Tell the user that ARG1 function is not implemented yet in this script.
