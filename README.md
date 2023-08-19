@@ -1,5 +1,7 @@
 # Freelancer HD Bash Installer
 
+Note: This repo won't be updated as I don't need the script anymore, the official installer has been working fine for me as of version 0.6. [I have bottles config files and install instructions here.](https://github.com/Vinesma/bottles-config/tree/master/Freelancer) 
+
 A script to install the [Freelancer HD Mod](https://www.moddb.com/mods/freelancer-hd-edition) using bash.
 
 This is not affiliated with the main project. I just ran into a ton of problems getting the official installer to work on Linux, so I put together a quick script that does the job for me.
